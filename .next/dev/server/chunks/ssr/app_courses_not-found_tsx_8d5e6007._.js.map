@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/User/Desktop/Advanced%20Web%20Technology/course-catalog-lab2/app/courses/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport default function CourseNotFound() {\n  return (\n    <section className=\"mx-auto max-w-4xl px-6 py-20\">\n      <h1 className=\"text-4xl font-black\">Course not found</h1>\n      <p className=\"mt-4 text-slate-600\">The requested course does not exist.</p>\n      <Link href=\"/courses\" className=\"mt-6 inline-block font-semibold text-blue-700\">← Back to courses</Link>\n    </section>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAQ,WAAU;;0BACjB,8OAAC;gBAAG,WAAU;0BAAsB;;;;;;0BACpC,8OAAC;gBAAE,WAAU;0BAAsB;;;;;;0BACnC,8OAAC,0LAAI;gBAAC,MAAK;gBAAW,WAAU;0BAAgD;;;;;;;;;;;;AAGtF","debugId":null}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/User/Desktop/Advanced%20Web%20Technology/course-catalog-lab2/app/courses/loading.tsx"],"sourcesContent":["export default function Loading() {\n  return <div className=\"mx-auto max-w-6xl px-6 py-16 text-slate-600\">Loading courses…</div>;\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;QAAI,WAAU;kBAA8C;;;;;;AACtE","debugId":null}}]
+}

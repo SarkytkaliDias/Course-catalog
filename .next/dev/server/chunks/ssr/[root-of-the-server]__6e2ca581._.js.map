@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/User/Desktop/Advanced%20Web%20Technology/course-catalog-lab2/app/about/page.tsx"],"sourcesContent":["export default function AboutPage() {\n  return (\n    <section className=\"mx-auto max-w-4xl px-6 py-20\">\n      <h1 className=\"text-4xl font-black\">About the project</h1>\n      <p className=\"mt-6 text-lg leading-8 text-slate-600\">This course catalog is a small Next.js 16 application built for the Advanced Web Technologies course. It demonstrates the App Router, Server Components, Client Components, dynamic routes, and TypeScript typing.</p>\n      <p className=\"mt-4 text-lg leading-8 text-slate-600\">The project starts with a mock course data source and will be extended in later labs as backend functionality is introduced.</p>\n    </section>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAQ,WAAU;;0BACjB,8OAAC;gBAAG,WAAU;0BAAsB;;;;;;0BACpC,8OAAC;gBAAE,WAAU;0BAAwC;;;;;;0BACrD,8OAAC;gBAAE,WAAU;0BAAwC;;;;;;;;;;;;AAG3D","debugId":null}}]
+}
