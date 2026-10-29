@@ -1,3 +1,4 @@
+import { EnrollForm } from "@/components/EnrollForm";
 import { LikeButton } from "@/components/LikeButton";
 import { getCourse } from "@/lib/courses";
 import { notFound } from "next/navigation";
@@ -14,9 +15,15 @@ export default async function CoursePage({ params }: { params: Promise<{ id: str
       </span>
       <h1 className="mt-6 text-5xl font-black tracking-tight">{course.title}</h1>
       <p className="mt-6 text-xl leading-8 text-slate-600">{course.description}</p>
+
       <div className="mt-10">
-        <LikeButton initialLikes={course.likes} />
+        <LikeButton courseId={course.id} initialLikes={course.likes} />
       </div>
+
+      <section className="mt-10">
+        <h2 className="mb-4 text-2xl font-bold">Enroll in this course</h2>
+        <EnrollForm courseId={course.id} />
+      </section>
     </article>
   );
 }
