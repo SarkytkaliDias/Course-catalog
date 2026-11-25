@@ -1,14 +1,19 @@
-# Course Catalog API — Lab 7
+# Course Catalog API — Lab 8
 
-FastAPI now uses PostgreSQL through SQLAlchemy and Alembic.
+REST and GraphQL now run side-by-side over the same SQLAlchemy services and PostgreSQL database.
 
-- SQLAlchemy ORM models and per-request sessions.
-- API routes query PostgreSQL instead of Python lists.
-- Constraint-name based error handling.
-- Alembic migrations 0001 and 0002.
-- Migration 0002 adds required course level safely: nullable -> backfill -> NOT NULL.
-- Verification scripts: check_db.py, check_models.py, try_errors.py.
+## Lab 8 highlights
 
-Expected final state:
-- alembic current -> 0002 (head)
-- alembic check -> No new upgrade operations detected.
+- Shared application rules in `services.py`.
+- REST Problem Details responses in `problem.py`.
+- Strawberry GraphQL at `/graphql`.
+- Queries, nested relations, `enroll` and `likeCourse` mutations.
+- `X-SQL-Queries` instrumentation and DataLoaders to remove N+1.
+- Query protection: depth <= 5, aliases <= 10, input validation, masked unexpected errors, configurable introspection.
+- REST vs GraphQL measurements for the My Courses screen.
+
+Expected checks:
+- `try_errors.py -> 5 of 5 as expected`
+- `try_graphql.py -> 8 of 8 as expected`
+- `try_n_plus_1.py -> 3 / 3 SQL queries`
+- `flood_likes.py -> 12 aliases found, 0 SQL queries`
