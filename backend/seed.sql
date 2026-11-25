@@ -1,4 +1,4 @@
-TRUNCATE enrollments, students, courses RESTART IDENTITY;
+TRUNCATE users, enrollments, students, courses RESTART IDENTITY;
 
 INSERT INTO courses (id, title, description, credits, is_elective, likes, level) VALUES
 ('modern-frontend', 'Modern Frontend: React & Next.js', 'React 19, Server Components, and the App Router.', 5, false, 24, 'intermediate'),

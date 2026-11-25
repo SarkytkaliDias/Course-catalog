@@ -1,6 +1,13 @@
 import httpx
 
 BASE = "http://localhost:8000"
+
+login = httpx.post(
+    f"{BASE}/auth/login",
+    data={"username": "admin@example.com", "password": "admin-demo-password"},
+)
+HEADERS = {"Authorization": f"Bearer {login.json()['access_token']}"}
+
 CASES = [
     ("email already taken", "/students", {"name": "Aigerim Two", "email": "aigerim@example.com"}, 409, "email-taken"),
     ("already enrolled", "/enrollments", {"courseId": "ai-integration", "studentId": 3}, 409, "already-enrolled"),
@@ -8,9 +15,10 @@ CASES = [
     ("unknown student", "/enrollments", {"courseId": "web-security", "studentId": 999}, 404, "student-not-found"),
     ("name too short", "/students", {"name": "N", "email": "n@example.com"}, 422, None),
 ]
+
 failed = 0
 for title, path, body, status, slug in CASES:
-    response = httpx.post(BASE + path, json=body)
+    response = httpx.post(BASE + path, json=body, headers=HEADERS)
     kind = response.json().get("type", "-").rsplit("/", 1)[-1]
     ok = response.status_code == status and (slug is None or kind == slug)
     failed += not ok

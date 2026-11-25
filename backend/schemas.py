@@ -1,9 +1,15 @@
 from datetime import datetime
+
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 from pydantic.alias_generators import to_camel
 
 class CamelModel(BaseModel):
-    model_config = ConfigDict(alias_generator=to_camel, validate_by_name=True, validate_by_alias=True, from_attributes=True)
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        validate_by_name=True,
+        validate_by_alias=True,
+        from_attributes=True,
+    )
 
 class CourseOut(CamelModel):
     id: str
@@ -38,3 +44,13 @@ class EnrollmentDetail(EnrollmentOut):
 class CourseStats(CamelModel):
     course_id: str
     enrolled: int
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+
+class UserOut(CamelModel):
+    id: int
+    email: EmailStr
+    role: str
+    student_id: int | None
