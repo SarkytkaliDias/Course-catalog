@@ -1,11 +1,14 @@
-# Course Catalog API — Lab 5
+# Course Catalog API — Lab 7
 
-FastAPI backend for the Course Catalog used by the Next.js frontend.
+FastAPI now uses PostgreSQL through SQLAlchemy and Alembic.
 
-## What changed in Lab 5
+- SQLAlchemy ORM models and per-request sessions.
+- API routes query PostgreSQL instead of Python lists.
+- Constraint-name based error handling.
+- Alembic migrations 0001 and 0002.
+- Migration 0002 adds required course level safely: nullable -> backfill -> NOT NULL.
+- Verification scripts: check_db.py, check_models.py, try_errors.py.
 
-- Added CORS for `http://localhost:3000`.
-- Added camelCase JSON aliases.
-- Added `POST /courses/{course_id}/like`.
-- Added enrollment creation and listing.
-- Likes and enrollments are still stored in memory and reset on backend restart.
+Expected final state:
+- alembic current -> 0002 (head)
+- alembic check -> No new upgrade operations detected.
