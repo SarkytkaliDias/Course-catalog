@@ -1,31 +1,11 @@
-# Course Catalog API
+# Course Catalog API — Lab 5
 
-A standalone FastAPI backend for the Advanced Web Technologies course catalog project.
+FastAPI backend for the Course Catalog used by the Next.js frontend.
 
-## How to run
+## What changed in Lab 5
 
-### Windows PowerShell
-
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-fastapi dev main.py
-```
-
-Open:
-
-- `http://127.0.0.1:8000/`
-- `http://127.0.0.1:8000/docs`
-- `http://127.0.0.1:8000/redoc`
-- `http://127.0.0.1:8000/openapi.json`
-
-## Routes
-
-- `GET /` — server health check
-- `GET /courses` — course list with filtering, sorting, and pagination
-- `GET /courses/{course_id}` — one course or a 404 response
-
-## Lab 4
-
-This commit introduces the first FastAPI backend. Course data still lives in Python memory in `data.py`.
+- Added CORS for `http://localhost:3000`.
+- Added camelCase JSON aliases.
+- Added `POST /courses/{course_id}/like`.
+- Added enrollment creation and listing.
+- Likes and enrollments are still stored in memory and reset on backend restart.
